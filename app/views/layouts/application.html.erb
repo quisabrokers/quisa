@@ -1,148 +1,98 @@
+<!DOCTYPE html>
+<html ng-app ="app_marjo">
+<head>
+  <title>Workspace</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.2/css/materialize.min.css">
 
-
-  <div class="section no-pad-bot #696969  " id="index-banner">
-    <div class="container ">
-      
-      <p class="flow-text">
-      <h2 class="text_h center header cd-headline letters type ">
-      <span class="#696969">Brokers es:</span> 
-      <span class="cd-words-wrapper waiting">
-        <b class="is-visible">Confiable</b>
-        <b>Seguridad</b>
-        <b>Emprendimiento</b>
-        <b>Rapidez</b>
-        <b>Honestidad</b>
-        <b>Profesionalismo</b>
-        <b>Servicio</b>
-        <b>Transparencia</b>
+  <!-- Compiled and minified JavaScript -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.2/js/materialize.min.js"></script>
+          
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular.min.js"></script>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  
+  <!-- %= javascript_include_tag 'application', 'data-turbolinks-track' => true % -->
+  <%= csrf_meta_tags %>
+<style>
+  input[type="text"] { 
+    text-transform: uppercase;
+    }
+    ::-webkit-input-placeholder { /* WebKit browsers */
+        text-transform: none;
+    }
+    :-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+        text-transform: none;
+    }
+    ::-moz-placeholder { /* Mozilla Firefox 19+ */
+        text-transform: none;
+    }
+    :-ms-input-placeholder { /* Internet Explorer 10+ */
+        text-transform: none;
+    }
+</style>
+</head>
+<body id="top" class="scrollspy">
+    <div class="navbar-fixed"> 
+     <nav>
+      <%if current_user.nil? %>
+        <div class="nav-wrapper deep-orange darken-2">
+      <%else%>
+        <div class="nav-wrapper">
+      <%end%>
+        <a href="<%=root_path%>" class="brand-logo">QUISA</a>
+        <!--<%=image_tag("logo marjo.png")%>-->
         
-      </span>
-    </h2>
-    </div>
+        <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
+        <ul class="right hide-on-med-and-down">
+          <%=render "partials/menu"%>
+        </ul>
+        <ul class="side-nav" id="mobile-demo">
+          <%=render "partials/menu2"%>
+  
+        </ul>
+      </div>
+    </nav>
   </div>
-
- <div id="quienes_somos" class="section scrollspy">
   <div class="container">
-      <!--   Icon Section   -->
-    <div class="row">
-          <div  class="col s12">
-            <h2 class="center header text_h2 ">Financiera  <span class="span_h2 orange-text text-deep-orange">QUISA BROKERS</span>es una empresa que tiene como objetivo otorgar servicios financieros a todas las personas que lo necesiten y que tengan la seguridad de un empleo.
-          </div>
-    </div>
-  
-    <div class="row"  >
-            <div  class="col s12  card-panel">
-              <div class="center promo promo-example">
-                 <i class="large material-icons" align="center">insert_chart</i>
-                <h2 class="promo-caption"> <span class="span_h2 orange-text text-orange accent-3"> Antecedentes:</h2>
-                <p class="light center flow-text">
-                  En México, acceder a los servicios financieros, se puede volver un problema por distintas razones:
-                  <ul>
-                    <li><p class="flow-text">* Poca accesibilidad a las instituciones financieras.</p></li>
-                    <li><p class="flow-text">* Falta de conocimiento de los productos que se ofrecen.</p></li>
-                    <li><p class="flow-text">* Las instituciones se niegan a otorgarles los servicios.</p></li>
-                    <li><p class="flow-text">* Las instituciones no confían en este sector de la población.</p></li>
-                    <li><p class="flow-text">* Falta de cultura y desconfianza de las personas hacia las instituciones financieras.</p></li>
-                    <li><p class="flow-text">* La banca no tiene la capacidad para atender dicho sector.</p></li>
-                    <li><p class="flow-text">* Las instituciones financieras cuentan con una estructura rígida.</p></li>
-                  </ul>
-                </p>
-              </div>
-            </div>
-    </div>
-    <div class="row">
-            <div class="col s12 m6 l6">
-              <div class="center promo promo-example">
-                <h5 class="promo-caption">Misión</h5>
-                <i class="large material-icons">call_made</i>
-                <p class="light center flow-text">Proveer de recursos monetarios a nuestros clientes para satisfacer sus necesidades a través de un servicio excelente, rápida respuesta y sin trámites complicados.</p>
-              </div>
-            </div>
-            <div class="col s12 m6 l6">
-              <div class="center promo promo-example">
-               <h5 class="promo-caption">Visión</h5>
-               <i class="large material-icons">visibility</i>
-                <p class="light center flow-text">Ser la primera opción de crédito para el cliente.</p>
-              </div>
-            </div>
+    <%unless current_user.nil?%>
+      <div class="card-panel">
+        <h6 class="center-align">Usuario: <%=current_user.email%></h6>
       </div>
-<div class="section scrollspy card-panel" id="row">
+    <%end%>
   
-  <h2 class="header text_b"> <span class="span_h2 black-text text-deep-orange">Sucursales </h2>
-
-  <div class="row" >
-        <div  class="col s12 m4 l4">
-          <div class="center promo promo-example">
-            <i class="mdi-action-favorite"></i>
-            <h5 class="promo-caption">Zona Norte</h5>
-            <p class="light center">
-            <li>Los Mochis, Sin.</li> 
-            <li>Guasave, Sin.</li> 
-            <li>El Fuerte, Sin.</li> 
-            
-          </div>
-        </div>
-        <div class="col s12 m4 l4">
-          <div class="center promo promo-example">
-            <i class="mdi-communication-phone"></i>
-            <h5 class="promo-caption">Zona Centro</h5>
-            <p class="light center">
-            <li>Guamúchil, Sin.</li> 
-            <li>Navolato, Sin.</li> 
-            <li>Culiacán, Sin.</li> 
-            
-          </div>
-        </div>
-        <div class="col s12 m4 l4">
-          <div class="center promo promo-example">
-            <i class="mdi-communication-stay-current-portrait"></i>
-           <h5 class="promo-caption">Zona Sur</h5>
-            <p class="light center">
-            <li><a class="black-text" href="https://www.youtube.com/">Costa Rica CLN, Sin.</a></li> 
-            <li> <a class="black-text" href="http://marjor-luisesh11.c9users.io/">Mazatlán, Sin.</a></li> 
-            <li>El Rosario, Sin.</li> 
-          </div>
-        </div>
-      </div>
-    </div>
+    <%= yield %>
   </div>
+  <footer id="contact" class="page-footer deep-orange scrollspy">
+    <div class="container">  
+ <div class="row">
 
-<div class="" id="work">
- <div class="container">
-        <h2 class="header text_b"> <span class="span_h2 orange-text text-deep-orange">Principios </h2>
-      <div class="card-panel row">
-        <ul class="staggered-test">
-          <li>
-            <div class="col s12 m6 l6">
-              <h4>TRANSPARENCIA</h4>
-              <p class="flow-text">Lo más importante para nosotros es mantener una relación sana y a largo plazo con los clientes, siendo congruentes en el actuar y el operar de la empresa.</p>
-            </div>
-          </li>
-          <li>
-            <div class="col s12 m6 l6">
-              <h4>HONESTIDAD</h4>
-              <p class="flow-text">Siempre vamos a actuar de acuerdo a la verdad y a los valores éticos humanos y de la empresa.</p>
-            </div>
-          </li>
-        </ul>
-      </div>
-      <div class="card-panel row">
-        <ul class="staggered-test">
-          <li>
-            <div class="col s12 m6 l6">
-              <h4>SERVICIO</h4>
-              <p class="flow-text">Dar respuesta en tiempo y forma a los compromisos que se tienen con los clientes.</p>
-            </div>
-          </li>
-          <li>
-            <div class="col s12 m6 l6">
-              <h4>PROFESIONALISMO</h4>
-              <p class="flow-text">Estar totalmente enfocados en mejorar continuamente la calidad que se tiene al desarrollar las labores de la empresa.</p>
-            </div>
-          </li>
-        </ul>
+        <div class="col l6 s12">
+          <h5 class="white-text">Contáctanos</h5>
+          <p class="grey-text text-lighten-4">
+            Dirección: Calle Río Nazas # 1240, Col. Los Pinos, C.P. 80128, Culiacán Sinaloa</p>
+              <li><a class="white-text" href="https://www.google.com.mx/maps/place/Calle+R%C3%ADo+Nazas+1240/@24.7929319,-107.4065136,19.75z/data=!4m6!3m5!1s0x86bcd0bfb0f19665:0xd40820d409421835!4b1!8m2!3d24.793005!4d-107.4063763">CÓMO LLEGAR</a></li>
+
+        </div>
+        <div class="col l3 s12">
+          
+        </div>
+        <div class="col l3 s12">
+          <h5 class="white-text">Social</h5>
+          <ul>
+            <li><a class="white-text" href="">Dribbble</a></li>
+            <li><a class="white-text" href="https://www.facebook.com/financieramarjo1">Facebook</a></li>
+            <li><a class="white-text" href="">Twitter</a></li>
+            <li><a class="white-text" href="">Google+</a></li>
+          </ul>
         </div>
       </div>
     </div>
- </div>
- 
+    <div class="footer-copyright deep-orange ">
+      <div class="container">
+      QUISA BROKERS FINANCIERA <a class=""></a>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>

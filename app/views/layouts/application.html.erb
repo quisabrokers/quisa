@@ -11,9 +11,7 @@
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-  <script>
-   
-  </script>
+
   <!-- %= javascript_include_tag 'application', 'data-turbolinks-track' => true %> -->
   <%= csrf_meta_tags %>
 <style>
@@ -37,11 +35,9 @@
 <body id="top" class="scrollspy">
     <div class="navbar-fixed"> 
      <nav>
-      <%if current_user.nil? %>
+ 
         <div class="nav-wrapper deep-orange darken-2">
-      <%else%>
-        <div class="nav-wrapper">
-      <%end%>
+
         <a href="<%=root_path%>" class="brand-logo">MARJO</a>
         <!--<%=image_tag("logo marjo.png")%>-->
         
@@ -57,13 +53,9 @@
     </nav>
   </div>
   <div class="container">
-    <%unless current_user.nil?%>
-      <div class="card-panel">
-        <h6 class="center-align">Usuario: <%=current_user.email%></h6>
-      </div>
-    <%end%>
-  
-    <%= yield %>
+
+ 
+
   </div>
   <footer id="contact" class="page-footer deep-orange scrollspy">
     <div class="container">  

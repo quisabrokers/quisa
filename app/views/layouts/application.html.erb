@@ -35,33 +35,23 @@
 <body id="top" class="scrollspy">
     <div class="navbar-fixed"> 
      <nav>
-      <%if current_user.nil? %>
-        <div class="nav-wrapper deep-orange darken-2">
-      <%else%>
+
         <div class="nav-wrapper">
-      <%end%>
-        <a href="<%=root_path%>" class="brand-logo">QUISA</a>
-        <!--<%=image_tag("logo marjo.png")%>-->
+        <a href="" class="brand-logo">QUISA</a>
+        <%=image_tag("logo.png")%>
         
         <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
         <ul class="right hide-on-med-and-down">
           <%=render "partials/menu"%>
         </ul>
-        <ul class="side-nav" id="mobile-demo">
-          <%=render "partials/menu2"%>
-  
-        </ul>
       </div>
     </nav>
   </div>
   <div class="container">
-    <%unless current_user.nil?%>
       <div class="card-panel">
-        <h6 class="center-align">Usuario: <%=current_user.email%></h6>
+        <h6 class="center-align">Usuario:</h6>
       </div>
-    <%end%>
-  
-    <%= yield %>
+
   </div>
   <footer id="contact" class="page-footer deep-orange scrollspy">
     <div class="container">  

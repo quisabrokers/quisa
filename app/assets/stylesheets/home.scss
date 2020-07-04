@@ -24,7 +24,7 @@
 	min-height: 500px;
 	max-height: 600px;
 	position: relative;
-	background-color: #ee6e73;
+	background-color: darkgrey;
 }
 
 #nav_f{
@@ -43,9 +43,9 @@
   position: absolute;
   color: #fff;
   display: inline-block;
-  font-size: 2.1rem;
+  font-size: 4.1rem;
   font-style: normal;
-  font-weight: 100;
+  font-weight: 200;
   padding: 0;
   letter-spacing: 7px;
 }
@@ -59,7 +59,7 @@
 .in{font-weight: 400 !important; font-style: normal !important;}
 
 .promo i {
-	color: #041031;
+	color: darkgrey;
 	font-size: 7rem;
 	display: block;
 }
@@ -74,7 +74,7 @@
 
 nav ul a {
   font-size: 1.2rem;
-  color: #FFF;
+  color: darkgrey;
   letter-spacing: 2px;
   display: block;
   font-weight: 300;
@@ -104,7 +104,7 @@ xtype
   transform: translateY(-50%);
   height: 90%;
   width: 1px;
-  background-color: #aebcb9;
+  background-color: black;
 }
 .cd-headline.type .cd-words-wrapper.waiting::after {
   -webkit-animation: cd-pulse 1s infinite;

@@ -6,12 +6,12 @@
 
 <body>
 
-<!-- Menú de navegación del sitio -->
+<!-- Menú de navegación del sitio
 <ul class="navbar">
   <li><a href="indice.html">Via Nomina</a>
   <li><a href="meditaciones.html">Via Domiciliacion</a>
   <li><a href="ciudad.html">Contacto</a>
-</ul>
+</ul-->
 
 <!-- Contenido principal -->
  <style type="text/css">
@@ -44,10 +44,12 @@
     border-top: thin dotted }
 </style>
 
- <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
-        <ul class="right hide-on-med-and-down">
-          <%=render "partials/menu"%>
-        </ul>
 <%=image_tag("logo.png")%>
+
+<a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
+  <ul class="right hide-on-med-and-down">
+    <%=render "partials/menu"%>
+  </ul>
+
 </body>
 </html>
